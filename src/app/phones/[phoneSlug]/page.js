@@ -93,11 +93,14 @@ export default async function SinglePhonePage({params}) {
   
   const phoneSlug = slugdata.phoneSlug;
   const res = await fetch(`${api}/api/phones/${phoneSlug}`);
+
   const data = await res.json();
-  console.log(data);
+  console.log(data,"fetched data")
+    console.log(data);
   
 
   const p = data.data;
+
    
 
    
