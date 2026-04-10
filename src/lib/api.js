@@ -1,0 +1,1 @@
+export const api = 'https://mobile-info-backend.onrender.com';
