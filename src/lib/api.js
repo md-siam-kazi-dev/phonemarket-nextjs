@@ -1,1 +1,1 @@
-export const api = 'https://mobile-info-backend.onrender.com';
+export const api = 'https://mobile-info-backend.vercel.app';
