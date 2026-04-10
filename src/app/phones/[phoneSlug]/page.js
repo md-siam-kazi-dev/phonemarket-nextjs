@@ -12,69 +12,6 @@ import { api } from "@/lib/api";
 
 
 
-const phone = {
-  id: 159427,
-  brand: "Samsung",
-  model: "Galaxy A05",
-  full_name: "Samsung Galaxy A05",
-  slug: "samsung-galaxy-a05",
-  price_bdt: 12999,
-  tier: "budget",
-  display: {
-    size: '6.5" IPS LCD',
-    resolution: "1612 x 720 pixels",
-    type: "IPS LCD",
-    refresh_rate: "90Hz",
-    protection: "Corning Gorilla Glass 3",
-  },
-  processor: {
-    chipset: "Helio G96",
-    cpu: "Octa-core",
-    gpu: "Mali-G610",
-  },
-  memory: {
-    ram: "4GB",
-    rom: "64GB",
-    expandable: "microSDXC (up to 1TB)",
-  },
-  camera: {
-    rear: "48MP (Wide) + 2MP (Depth)",
-    front: "5MP",
-    video: "1080p@30fps",
-    features: "AI Scene Detection, Night Mode, Portrait Mode",
-  },
-  battery: {
-    capacity: "4000mAh",
-    charging: "15W",
-    wireless: "No",
-    reverse_wireless: "No",
-  },
-  connectivity: {
-    network: "5G",
-    wifi: "Wi-Fi 5",
-    bluetooth: "5.1",
-    nfc: "No",
-    usb: "USB Type-C",
-    jack: "3.5mm",
-  },
-  design: {
-    dimensions: "163.4 x 75.9 x 8.8mm",
-    weight: "201g",
-    colors: ["Ice Blue", "Graphite Black"],
-    build: "Glass front, Plastic back",
-  },
-  software: {
-    os: "Android 13",
-    ui: "One UI 6.1",
-  },
-  rating: 4.2,
-  reviews: 3711,
-  in_stock: true,
-  image_url: "https://fdn2.gsmarena.com/vv/bigpic/samsung-galaxy-a05.jpg",
-  release_year: 2022,
-  gsmarena_slug: "samsung-galaxy-a05",
-};
-
 // ── Reusable subcomponents ────────────────────────────────────────────────────
 
 function SpecRow({ label, value }) {
@@ -153,6 +90,7 @@ const COLOR_MAP = {
 export default async function SinglePhonePage({params}) {
 
   const res = await params;
+  console.log(res)
   const phoneSlug = res.phoneSlug;
   const data = await fetch(`${api}/api/phones/${phoneSlug}`).then(res => res.json());
   console.log(data);

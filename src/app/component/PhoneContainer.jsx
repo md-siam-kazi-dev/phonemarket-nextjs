@@ -7,7 +7,7 @@ const PhoneContainer =async ({phonePromis}) =>{
     console.log(response);
     const phones = response.data;
     return (
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 w-fit  container-div gap-2 ">
+        <div className="grid grid-cols-1 mt-10 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 w-fit  container-div gap-2 ">
 
         {phones.map(phone => {
             return(
