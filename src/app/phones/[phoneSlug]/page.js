@@ -89,11 +89,14 @@ const COLOR_MAP = {
 // ── Main Component ────────────────────────────────────────────────────────────
 export default async function SinglePhonePage({params}) {
 
-  const res = await params;
-  console.log(res)
-  const phoneSlug = res.phoneSlug;
-  const data = await fetch(`${api}/api/phones/${phoneSlug}`).then(res => res.json());
+  const slugdata = await params;
+  
+  const phoneSlug = slugdata.phoneSlug;
+  const res = await fetch(`${api}/api/phones/${phoneSlug}`);
+  const data = await res.json();
   console.log(data);
+  
+
   const p = data.data;
    
 
