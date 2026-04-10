@@ -3,7 +3,7 @@ import PhoneCard from "./PhoneCard";
 
 
 const PhoneContainer =async ({phonePromis}) =>{
-    const response =await fetch(`${api}/api/phones`).then(res => res.json());
+    const response =await fetch(`${api}/api/phones`,{cache:'no-store',}).then(res => res.json());
     console.log(response);
     const phones =await response.data;
     return (
