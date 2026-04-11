@@ -6,7 +6,7 @@ import PhoneCardContainer from "./phoneCardContainer";
 
 
 const PhoneContainer =async ({phonePromis}) =>{
-    const response =await fetch(`${api}/api/phones`,{cache:'no-store',}).then(res => res.json());
+    const response =await fetch(`${api}/api/phones`,{next: { revalidate: 60 }}).then(res => res.json());
     console.log(response);
     const phones =await response.data;
     return (
