@@ -1,4 +1,4 @@
-"use client"
+
 import PhoneCard from './PhoneCard'
 
 const PhoneCardContainer = ({phones}) => {
