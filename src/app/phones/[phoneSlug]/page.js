@@ -8,6 +8,7 @@
 import Link from "next/link";
 import { api } from "@/lib/api";
 import PhoneCardContainer from "@/app/component/phoneCardContainer";
+import RelatedPhoneContainer from "@/app/component/relatedPhoneContainer";
 
 // 🔥 Shared fetch function
 const getPhone = async (slug) => {
@@ -134,7 +135,7 @@ export default async function SinglePhonePage({params}) {
    
 
   return (
-    // data-theme="night" → DaisyUI dark theme; swap to "light" / "corporate" etc.
+   
     <>
     
     <div data-theme="night" className="min-h-screen mb-10 px-5 bg-base-100 font-[Syne,sans-serif]">
@@ -339,16 +340,14 @@ export default async function SinglePhonePage({params}) {
 
         {/* ── FOOTER STRIP ─────────────────────────────────────────────── */}
         <div className="divider" />
-        
-          
-
-         </div>
+        </div>
 
          <h1 className="text-center font-bold text-2xl ">Related Phones</h1>
 
 
-         <PhoneCardContainer phones={data.related}></PhoneCardContainer>
-    </div>
+          <RelatedPhoneContainer phones={data.related} />
+        </div>
+    
     </>
   );
 }
