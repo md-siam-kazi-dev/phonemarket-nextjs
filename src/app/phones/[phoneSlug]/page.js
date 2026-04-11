@@ -7,6 +7,7 @@
 
 import Link from "next/link";
 import { api } from "@/lib/api";
+import PhoneCardContainer from "@/app/component/phoneCardContainer";
 
 // 🔥 Shared fetch function
 const getPhone = async (slug) => {
@@ -136,7 +137,7 @@ export default async function SinglePhonePage({params}) {
     // data-theme="night" → DaisyUI dark theme; swap to "light" / "corporate" etc.
     <>
     
-    <div data-theme="night" className="min-h-screen px-5 bg-base-100 font-[Syne,sans-serif]">
+    <div data-theme="night" className="min-h-screen mb-10 px-5 bg-base-100 font-[Syne,sans-serif]">
       {/* ── Breadcrumb nav ───────────────────────────────────────────────── */}
       <div className="bg-base-200 border-b border-base-300 py-2">
         <div className="container-div">
@@ -341,7 +342,12 @@ export default async function SinglePhonePage({params}) {
         
           
 
-      </div>
+         </div>
+
+         <h1 className="text-center font-bold text-2xl ">Related Phones</h1>
+
+
+         <PhoneCardContainer phones={data.related}></PhoneCardContainer>
     </div>
     </>
   );
