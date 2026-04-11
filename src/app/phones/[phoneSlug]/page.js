@@ -144,8 +144,8 @@ export default async function SinglePhonePage({params}) {
           <div className="breadcrumbs text-xs text-base-content/40 font-mono py-0">
             <ul>
               <li><Link href="/" className="hover:text-primary">Home</Link></li>
-              <li><a className="hover:text-primary">Phones</a></li>
-              <li><a className="hover:text-primary">{p.brand}</a></li>
+              
+              <li><Link href={`/${p.brand}`} className="hover:text-primary">{p.brand}</Link></li>
               <li className="text-base-content/70">{p.model}</li>
             </ul>
             
