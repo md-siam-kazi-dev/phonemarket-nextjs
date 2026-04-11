@@ -10,7 +10,7 @@ const Brand =async ({params}) => {
   return (
      <>
       <h1 className='font-bold  mt-10 mb-10 text-2xl text-center'>{brand} Phones</h1>
-      <PhoneCardContainer phones={phones} />
+      <PhoneCardContainer phonesData={jsonData} />
      </>
   )
 }
