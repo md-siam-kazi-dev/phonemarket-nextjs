@@ -8,9 +8,35 @@
 import Link from "next/link";
 import { api } from "@/lib/api";
 
+// 🔥 Shared fetch function
+const getPhone = async (slug) => {
+  const res = await fetch(`${api}/api/phones/${slug}`, {
+    next: { revalidate: 3600 }, // 1 hour cache
+  });
+  return res.json();
+};
 
+// ✅ Dynamic metadata
+export async function generateMetadata({ params }) {
+  const {phoneSlug} = await params;
+  const data = await getPhone(phoneSlug);
+  const p = data.data;
 
+  return {
+    title: `${p.model} Price in Bangladesh (${p.release_year})`,
+    description: `${p.model} full specs, price ৳${p.price_bdt}, review and features.`,
+    
+    openGraph: {
+      title: p.model,
+      description: p.full_name,
+      images: [p.image_url],
+    },
 
+    icons: {
+      icon: "/favicon.ico",
+    },
+  };
+}
 
 // ── Reusable subcomponents ────────────────────────────────────────────────────
 
